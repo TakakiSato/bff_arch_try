@@ -1,5 +1,5 @@
 import { GraphQLObjectType } from 'graphql';
-import { memberField } from './member/';
+import { memberField } from './member';
 
 export const queryType = new GraphQLObjectType({
   name: 'Query',
