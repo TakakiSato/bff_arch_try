@@ -10,3 +10,11 @@ export const queryType = new GraphQLObjectType({
     ...bookField.query
   }
 });
+
+export const mutationType = new GraphQLObjectType({
+  name: 'Mutation',
+  description: 'The root Mutation type.',
+  fields: {
+    ...authorField.mutation
+  }
+});

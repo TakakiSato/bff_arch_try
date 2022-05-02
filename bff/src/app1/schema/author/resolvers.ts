@@ -6,7 +6,20 @@ const options: AxiosRequestConfig = {
   method: "GET",
 };
 
-export const getAuthorList = async () => {
+export const getAuthorList = async (): Promise<Array<object>> => {
     const res = await axios(options);
+    console.log(typeof(res.data));
     return await res.data;
 }
+
+export const createAuthor = ({ name }: { name: string;}) => {
+  //実際はbackendちゃんと作ってpostに投げるなど
+  const author = {
+    id: getAuthorList.length + 1,
+    name,
+  };
+  console.log(author)
+  console.log(getAuthorList.length)
+  console.log('createAuthor')
+  return true
+};
