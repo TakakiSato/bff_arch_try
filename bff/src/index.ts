@@ -1,22 +1,9 @@
 import express = require('express');
-import { graphqlHTTP } from 'express-graphql';
-import { GraphQLSchema } from 'graphql';
-import { queryType } from '@/fields/';
-
 const PORT = 4000;
 const app = express();
 
-const schema = new GraphQLSchema({
-  query: queryType
-});
-
-app.use(
-  '/graphql',
-  express.json(),
-  graphqlHTTP({
-    schema,
-    graphiql: true
-  })
-);
+// マイクロサービスごとディレクトリ分ける
+var app1Router = require('./app1/');
+app.use('/app1', app1Router );
 
 app.listen(PORT, () => console.log('Listening on :4000'));

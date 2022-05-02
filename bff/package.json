@@ -5,10 +5,14 @@
     "express": "^4.18.1",
     "express-graphql": "^0.12.0",
     "graphql": "^15.8.0",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.4"
   },
   "devDependencies": {
     "ts-node": "^10.7.0",
     "tsconfig-paths": "^3.14.1"
+  },
+  "scripts": {
+    "ts-node-dev": "ts-node-dev --respawn src/index.ts"
   }
 }
