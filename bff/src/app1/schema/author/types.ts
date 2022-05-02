@@ -2,21 +2,17 @@
 
 import { GraphQLObjectType, GraphQLNonNull, GraphQLString, GraphQLInt } from 'graphql';
 
-export const memberType = new GraphQLObjectType({
-  name: 'member',
-  description: 'member',
+export const authorType = new GraphQLObjectType({
+  name: 'author',
+  description: 'author',
   fields: {
     id: {
       type: new GraphQLNonNull(GraphQLInt),
-      description: 'The Member ID.'
+      description: 'The author ID.'
     },
     name: {
       type: new GraphQLNonNull(GraphQLString),
-      description: 'The Member name.'
+      description: 'The author name.'
     },
-    age: {
-      type: new GraphQLNonNull(GraphQLInt),
-      description: 'The Member age.'
-    }
   }
 });
