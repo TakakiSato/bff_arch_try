@@ -1,0 +1,21 @@
+version: '3.7'
+
+networks:
+  bff_arch_net:
+
+volumes:
+  backend-data:
+
+services:
+  backend:
+    image: nginx
+    platform: linux/amd64
+    volumes:
+      - ./backend:/app/app/webroot
+      - ./docker/backend/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+    - "8080:80"
+    environment:
+    - NGINX_HOST=backend.com
+    - NGINX_PORT=80
+

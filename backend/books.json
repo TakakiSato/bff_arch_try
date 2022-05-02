@@ -1,0 +1,6 @@
+[
+  {"id" : 1, "author_id" : 1, "name" : "tanaka no rekishi"},
+  {"id" : 2, "author_id" : 2, "name" : "yamada no rekishi"},
+  {"id" : 3, "author_id" : 1, "name" : "tanaka no hanashi"},
+  {"id" : 4, "author_id" : 2, "name" : "yamada no hanashi"}
+]
