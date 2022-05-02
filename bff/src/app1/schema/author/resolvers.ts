@@ -8,7 +8,6 @@ const options: AxiosRequestConfig = {
 
 export const getAuthorList = async (): Promise<Array<object>> => {
     const res = await axios(options);
-    console.log(typeof(res.data));
     return await res.data;
 }
 
