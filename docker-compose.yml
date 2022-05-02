@@ -33,4 +33,5 @@ services:
       - ./front_nuxt3:/app
     ports:
     - "3000:3000"
-    command: /bin/bash -c "cd /app; npm install; npm run dev"
+    - "24678:24678" #vite用ポート
+    command: /bin/bash -c "cd /app; npm install; npm run dev -- -o"

@@ -1,13 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.3",
-    "nuxt": "3.0.0-rc.1"
+    "autoprefixer": "^10.4.0",
+    "nuxt": "npm:nuxt3@latest",
+    "postcss": "^8.4.1",
+    "tailwindcss": "^2.2.19"
   }
 }
