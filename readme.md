@@ -25,7 +25,10 @@ http://localhost:3000/
 http://localhost:4000/app1/graphql
 
 
-## 参考にした情報
+# メモ
+- docker-compose down をしてからupしないとnuxtでポート競合することあり。
+- docker exec -it bff_arch_try_auth_1 bash でログイン可能
+
 ### bff + express
 - https://qiita.com/ut0n/items/83b5836bc542c8f9bc71
 - apolloまで使ったほうが良い??
@@ -34,3 +37,8 @@ http://localhost:4000/app1/graphql
 
 
 http://localhost:4000/app1/graphql?query=query%20%7B%0A%20%20authorList%20%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D
+
+### cakephp
+チュートリアルのままログイン機能作成
+https://book.cakephp.org/4/ja/tutorials-and-examples/blog-auth-example/auth.html
+

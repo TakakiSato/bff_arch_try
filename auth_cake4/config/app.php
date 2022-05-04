@@ -278,7 +278,13 @@ return [
      *   E.g set it to 'utf8mb4' in MariaDB and MySQL and 'utf8' for any
      *   other RDBMS.
      */
-    'Datasources' => [
+    /*
+     * Connection information used by the ORM to connect
+     * to your application's datastores.
+     *
+     * See app.php for more configuration options.
+     */
+    'Datasources'                 => [
         /*
          * These configurations should contain permanent settings used
          * by all environments.
@@ -290,24 +296,24 @@ return [
          * in app_local.php depending on the applications needs.
          */
         'default' => [
-            'className' => Connection::class,
-            'driver' => Mysql::class,
-            'persistent' => false,
-            'timezone' => 'UTC',
+            'className'        => Connection::class,
+            'driver'           => Mysql::class,
+            'persistent'       => false,
+            'timezone'         => 'UTC',
 
             /*
              * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support, in CakePHP 3.6
              */
-            //'encoding' => 'utf8mb4',
+            'encoding' => 'utf8mb4',
 
             /*
              * If your MySQL server is configured with `skip-character-set-client-handshake`
              * then you MUST use the `flags` config to set your charset encoding.
              * For e.g. `'flags' => [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']`
              */
-            'flags' => [],
-            'cacheMetadata' => true,
-            'log' => false,
+            'flags'            => [],
+            'cacheMetadata'    => true,
+            'log'              => false,
 
             /*
              * Set identifier quoting to true if you are using reserved words or
@@ -332,19 +338,21 @@ return [
         /*
          * The test connection is used during the test suite.
          */
-        'test' => [
-            'className' => Connection::class,
-            'driver' => Mysql::class,
-            'persistent' => false,
-            'timezone' => 'UTC',
+        'test'    => [
+            'className'        => Connection::class,
+            'driver'           => Mysql::class,
+            'persistent'       => false,
+            'timezone'         => 'UTC',
             //'encoding' => 'utf8mb4',
-            'flags' => [],
-            'cacheMetadata' => true,
+            'flags'            => [],
+            'cacheMetadata'    => true,
             'quoteIdentifiers' => false,
-            'log' => false,
+            'log'              => false,
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
         ],
     ],
+
+
 
     /*
      * Configures logging options

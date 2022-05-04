@@ -8,3 +8,4 @@ RUN apt-get update \
     && rm -fr /var/lib/apt/lists/*
 
 EXPOSE 8765
+EXPOSE 9000

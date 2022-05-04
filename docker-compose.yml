@@ -49,6 +49,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8765:8765"
+      - "9000:9000"
     tty: true
     stdin_open: true
     volumes:
@@ -57,7 +58,7 @@ services:
     networks:
       bff_arch_net:
 
-  db:
+  mysql:
     image: mysql:5.6
     platform: linux/amd64
     ports:
