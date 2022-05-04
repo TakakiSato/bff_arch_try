@@ -2,3 +2,5 @@ bff_exprese_graphql/node_modules
 front_nuxt3/node_modules
 front_nuxt3/.nuxt
 auth_cake4/vendor
+auth_cake4/logs
+auth_cake4/tmp
