@@ -22,8 +22,8 @@ class UsersController extends AppController
         if ($result->isValid()) {
             // ログイン成功後に /article にリダイレクトします
             $redirect = $this->request->getQuery('redirect', [
-                'controller' => 'Articles',
-                'action' => 'index',
+                'controller' => 'Pages',
+                'action' => 'home',
             ]);
 
             return $this->redirect($redirect);
@@ -62,11 +62,24 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('ユーザを作成しました。作成したユーザでログインできます。'));
                 return $this->redirect(['action' => 'add']);
             }
             $this->Flash->error(__('Unable to add the user.'));
         }
         $this->set('user', $user);
+    }
+
+    public function loginCheck(): void
+    {
+        $loginUser = $this->request->getAttribute('identity');
+        $loginUser = [
+            'id' => $loginUser['id'],
+            'email' => $loginUser['email'],
+        ];
+        $this->viewBuilder()->setClassName('Json');
+        $this->set('loginUser', $loginUser);
+        $this->set('_serialize', ['loginUser']);
+
     }
 }

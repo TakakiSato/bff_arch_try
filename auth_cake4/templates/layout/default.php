@@ -41,8 +41,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
         </div>
         <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
+        <span>セッションIDは[ <?= session_id()?> ]です / </span>
+        <?php if (isset($loginUser)) : ?>
+            <span><?= $loginUser['email'] ?> でログイン中</span>
+            <a rel="noopener" href="/users/logout">logout</a>
+        <?php else : ?>
+            <a rel="noopener" href="/users/login">login</a>
+            <a rel="noopener" href="/users/add">create user</a>
+        <?php endif ; ?>
         </div>
     </nav>
     <main class="main">

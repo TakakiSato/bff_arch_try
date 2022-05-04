@@ -123,7 +123,7 @@ class Application extends BaseApplication
             'unauthenticatedRedirect' => '/users/login',
             'queryParam' => 'redirect',
         ]);
-    
+
         // 識別子をロードして、電子メールとパスワードのフィールドを確認します
         $authenticationService->loadIdentifier('Authentication.Password', [
             'fields' => [
@@ -131,7 +131,7 @@ class Application extends BaseApplication
                 'password' => 'password',
             ]
         ]);
-    
+
         // 認証子をロードするには、最初にセッションを実行する必要があります
         $authenticationService->loadAuthenticator('Authentication.Session');
         // メールとパスワードを選択するためのフォームデータチェックの設定
@@ -142,7 +142,7 @@ class Application extends BaseApplication
             ],
             'loginUrl' => '/users/login',
         ]);
-    
+
         return $authenticationService;
     }
 

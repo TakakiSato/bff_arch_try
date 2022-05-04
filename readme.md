@@ -16,7 +16,7 @@ CREATE TABLE users (
 ```
 
 - ログイン(cakephp)
-http://localhost:8765/
+http://localhost:8765/users/login
 
 - フロント(Nuxt)
 http://localhost:3000/

@@ -35,6 +35,9 @@ class AppController extends Controller
         // このアプリケーションのすべてのコントローラのために、
         // インデックスとビューのアクションを公開し、認証チェックをスキップします
         $this->Authentication->addUnauthenticatedActions(['index', 'view']);
+        $loginUser = $this->request->getAttribute('identity');
+        $this->set(compact('loginUser'));
+
     }
 
     /**
