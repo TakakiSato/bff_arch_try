@@ -1,13 +1,19 @@
 <script setup>
-//http://localhost:4000/app1/graphql?query=query{authorList{name}}
-//http%3A%2F%2Flocalhost%3A4000%2Fapp1%2Fgraphql%3Fquery%3Dquery%7BauthorList%7Bname%7D%7D
-const { data: result } = await useFetch('http://bff:4000/app1/graphql?query=query{authorList{id,name}}');
-
-const author_id = ref(false);
-const author_name = ref(false);
-const book_id = ref(false);
-const book_name = ref(true);
-
+    //http://localhost:4000/app1/graphql?query=query{authorList{name}}
+    //http%3A%2F%2Flocalhost%3A4000%2Fapp1%2Fgraphql%3Fquery%3Dquery%7BauthorList%7Bname%7D%7D
+    //let sid = '';
+    //if (useCookie('PHPSESSID').value ?? false) {
+    //  sid = useCookie('PHPSESSID').value;
+    //  console.log(sid);
+    //}
+    const author_id = ref(false);
+    const author_name = ref(false);
+    const book_id = ref(false);
+    const book_name = ref(true);
+    var result = '確認中..';
+    const sid = useCookie('PHPSESSID').value;
+    console.log(sid);
+    result = await useFetch('http://bff:4000/app1/graphql?query=query{authorList{id,name}}&sid=' + sid);
 </script>
 
 <template>

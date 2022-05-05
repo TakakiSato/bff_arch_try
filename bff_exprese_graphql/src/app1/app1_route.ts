@@ -11,11 +11,13 @@ const schema: any = new GraphQLSchema({
 
 router.use(
   '/graphql',
-  express.json(),
-  graphqlHTTP({
-    schema,
-    graphiql: true
-  })
-)
+  graphqlHTTP((_request) => {
+    console.log('graphql Start Time:', Date.now())
+    return {
+      schema,
+      graphiql: true
+    };
+  }),
+);
 
 module.exports = router;
